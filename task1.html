@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Lab 04</title>
+</head>
+<body>
+    <div class="center-block">
+        <div id="menu" class="menu">
+            <a id="task1" href="task1.html" class="menu-button active">Завдання 1</a>
+            <a id="task2" href="task2.html" class="menu-button">Завдання 2</a>
+        </div>
+    </div>
+    <div id="content-block">
+        <h1>Зміна властивостей зображення</h1>
+        <img id="image-target" src="src/dv.jpg" alt="Darth Vader" />
+        <div id="errorInfo">Тестова помилка</div>
+        <form id="imgPropertiesForm">
+            <h2>Зміна розмірів:</h2>
+            <div class="input-block">
+                <label for="imgWidth">Ширина (width)</label>
+                <input type="text" name="width" id="imgWidth" />
+            </div>
+            <div class="input-block">
+                <label for="imgHeight">Висота (height)</label>
+                <input type="text" name="height" id="imgHeight" />
+            </div>
+            <h2>Зміна рамки:</h2>
+            <div class="input-block">
+                <label for="imgBorderWidth">Товщина рамки</label>
+                <input type="text" name="borderWidth" id="imgBorderWidth" />
+            </div>
+            <div class="input-block">
+                <label for="imgBorderColor">Колір рамки</label>
+                <input type="color" name="borderColor" id="imgBorderColor" />
+            </div>
+            <h2>Додатково</h2>
+            <div class="input-block">
+                <label for="imgAlt">Альтернативний текст</label>
+                <input type="text" name="altText" id="imgAlt" />
+            </div>
+            <div class="input-block">
+                <button type="submit">Застосувати параметри</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="src/task1.js."></script>
+</html>
