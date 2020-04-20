@@ -20,6 +20,30 @@ table.addEventListener('click', event => {
     }
 });
 
+table.addEventListener('input', event => {
+    clearDiagram();
+    createDiagram();
+});
+
+diagram.addEventListener('mouseover', event => {
+    const target = event.target;
+    if (!target.dataset.value) return;
+    
+    const blockValueElement = document.createElement('p');
+    blockValueElement.textContent = target.dataset.value;
+    blockValueElement.classList.add('diagramInfo');
+    target.parentElement.append(blockValueElement);
+});
+
+diagram.addEventListener('mouseout', event => {
+    const target = event.target;
+    if (!target.dataset.value) return;
+    
+    target.parentElement.children.item(2).remove();
+});
+
+
+// Functions
 function displayAddForm() {
     addForm.style.display = 'block';
     addButton.setAttribute('disabled', 'disabled');
@@ -68,8 +92,8 @@ function clearDiagram() {
 }
 
 function createDiagram() {
-    const colors = ['red','blue','black','yellow'];
-    const max_height = Number.parseFloat(getComputedStyle(diagram).height) - 10;
+    const colors = ['red','blue','green','yellow'];
+    const max_height = Number.parseFloat(getComputedStyle(diagram).height) - 50;
     const width = Number.parseFloat(getComputedStyle(diagram).width);
     console.log(max_height);
 
@@ -87,17 +111,31 @@ function createDiagram() {
 
     let elementIndex = 0;
     rows.forEach(r => {
+        let diagramElement = document.createElement('div');
+        diagramElement.style.flexDirection = 'column-reverse';
+        diagramElement.style.display = 'flex';
+
+        let diagramElementLabel = document.createElement('p');
+        diagramElementLabel.textContent = r.children.item(1).textContent;
+
+        // Сам Блок
         let div = document.createElement('div');
         let value = Number.parseInt(r.children.item(2).textContent);
         div.dataset.value = Number.isNaN(value) ? 0 : value;
+        diagramElement.dataset.value = div.dataset.value;
         div.style.height = ((value * max_height) / maxValue) + 'px';
+
         let basis = (100 * (width/rows.length)) / width;
         basis -= 1 * rows.length;
-        div.style.flexBasis = basis + '%';
-        //console.log(rows.length);
-        console.log(div.style.flexBasis);
+        diagramElement.style.flexBasis = basis + '%';
+
         div.style.backgroundColor = colors[elementIndex];
+        div.classList.add('hover-helper');
+
         elementIndex == colors.length - 1 ? elementIndex = 0 : elementIndex++;
-        diagram.append(div);
+
+        diagramElement.append(diagramElementLabel);
+        diagramElement.append(div);
+        diagram.append(diagramElement);
     });
 }

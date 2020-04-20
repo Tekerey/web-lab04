@@ -13,20 +13,20 @@ const altInput = document.getElementById('imgAlt');
 const height = image.height;
 const width = image.width;
 const borderWidth = getComputedStyle(image).borderWidth.replace('px','');
-const borderColor = getComputedStyle(image).borderColor;
+//const borderColor = getComputedStyle(image).borderColor;
 const alt = image.alt;
 
 // Записуємо в інпути початкові значення
 heightInput.value = height;
 widthInput.value = width;
 borderWidthInput.value = borderWidth;
-borderColorInput.value = borderColor;
+borderColorInput.value = '#ff0000';
 altInput.value = alt;
 
 image.style.width = width + 'px';
 image.style.height = height + 'px';
 image.style.borderWidth = borderWidth + 'px';
-image.style.borderColor = borderColor;
+image.style.borderColor = '#ff0000';
 
 const errorDiv = document.getElementById('errorInfo');
 
