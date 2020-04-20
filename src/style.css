@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.center-block {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    margin-top: 25px;
+    border-radius: 20px;
+}
+
+.menu :first-child {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.menu :last-child {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.menu-button {
+    padding: 10px;
+    border: 0px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    background-color: gainsboro;
+    transition: all .3s ease-in-out;
+}
+
+.menu-button:hover {
+    background-color: antiquewhite;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu-button:active {
+    background-color: cornsilk;
+}
+
+.menu-button.active {
+    background-color: cornsilk;
+    font-size: 15px;
+}
+
+#content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#image-target {
+    height: 350px;
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    margin: 20px 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+#imgPropertiesForm {
+    width: 700px;
+}
+
+.input-block {
+    display: flex;
+    margin: 10px 0px 20px 0px;
+    width: 100%;
+    min-height: 40px;
+}
+
+.input-block :first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.input-block :last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.input-block label {
+    display: flex;
+    padding: 5px 15px;
+    color: slategrey;
+    background-color: rgb(233, 240, 242);
+    font-size: large;
+    min-width: 200px;
+    border: 1px solid lightgray;
+    border-right: 0px;
+    align-items: center;
+}
+
+.input-block input {
+    padding: 0px 15px;
+    margin-left: 0px;
+    display: flex;
+    border: 1px solid lightgray;
+    color: slategrey;
+    width: inherit;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-block input:focus {
+    box-shadow: 0 0 0 3px lightskyblue;
+    outline: none;
+}
+
+.input-block button {
+    border: 1.5px solid lightskyblue;
+    background: none;
+    color: lightskyblue;
+    padding: 0 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.input-block button:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+.input-block button:focus {
+    box-shadow: 0 0 0 3px lightskyblue;
+    outline: none;
+}
+
+.input-error {
+    box-shadow: 0 0 0 3px red;
+}
+
+#errorInfo {
+    display: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightcoral;
+    color: whitesmoke;
+    border-radius: 7px;
+    transition: all 0.5s ease-in-out;
+}
+
+#errorInfo.visible {
+    display: block;
+}
+
+.add-button {
+    border: 1.5px solid slategrey;
+    background: none;
+    color: slategrey;
+    padding: 0 10px;
+    margin: 15px 0;
+    min-height: 40px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: slategrey;
+    color: white;
+}
+
+.add-button:focus {
+    box-shadow: 0 0 0 3px lightskyblue;
+    outline: none;
+}
+
+.add-button:disabled {
+    cursor: default;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: darkslategrey;
+    color: whitesmoke;
+}
+
+tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+th {
+    height: 45px;
+    min-width: 200px;
+    text-align: left;
+}
+
+td {
+    min-width: 200px;
+    height: 50px;
+}
+
+td:focus {
+    background-color: white;
+    border: 2px solid lightseagreen;
+    outline: none;
+    padding-left: 15px;
+}
+
+table button {
+    color: lightseagreen;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding-left: 30px;
+}
+
+table button:hover {
+    font-size: 1.3em;
+}
+
+table button:focus {
+    outline: none;
+}
+
+#newRowForm {
+    display: none;
+}
+
+#diagramBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 400px;
+    margin: 10px 0;
+    background-color: whitesmoke;
+}
+
+#diagramBlock div {
+    flex: 0 1 auto;
+    align-self: auto;
+}

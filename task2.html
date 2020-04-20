@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Lab 04</title>
+</head>
+<body>
+    <div class="center-block">
+        <div id="menu" class="menu">
+            <a id="task1" href="task1.html" class="menu-button">Завдання 1</a>
+            <a id="task2" href="task2.html" class="menu-button  active">Завдання 2</a>
+        </div>
+    </div>
+    <div id="content-block">
+        <div id="content">
+            <h1>Кількість ДТП</h1>
+            <table>
+                <thead>
+                    <th></th>
+                    <th>Рік</th>
+                    <th>Кількість ДТП</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button>Видалити</button></td>
+                        <td contenteditable>2020 рік</td>
+                        <td contenteditable>4554</td>
+                    </tr>
+                    <tr>
+                        <td><button>Видалити</button></td>
+                        <td contenteditable>2019 рік</td>
+                        <td contenteditable>5456</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <button id="addButton" class="add-button">Додати рік</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <form id="newRowForm">
+                <div class="input-block">
+                    <label for="yearInput">Рік</label>
+                    <input type="number" value="2020" name="year" id="yearInput" />
+                </div>
+                <div class="input-block">
+                    <label for="dtpInput">Кількість ДТП</label>
+                    <input type="number" value="0" name="dtp" id="dtpInput" />
+                </div>
+                <div class="input-block">
+                    <button type="submit">Додати</button>
+                </div>
+            </form>
+            <h1>Діаграма</h1>
+            <div>
+                <div id="diagramBlock">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="src/task2.js."></script>
+</html>
